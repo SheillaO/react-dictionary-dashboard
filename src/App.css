@@ -1,0 +1,12 @@
+.brand-logo {
+  display: block;
+  height: 90px;
+  width: auto;
+  opacity: 0.85;
+}
+
+header {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.8));
+  backdrop-filter: blur(10px);
+}
+
