@@ -1,4 +1,5 @@
 import React from "react";
+import Meaning from "./Meaning";
 
 export default function Results(props) {
   // If there are NO results yet, don't show anything
@@ -12,28 +13,11 @@ export default function Results(props) {
   return (
     <div className="results">
       <h2>{results.word}</h2>
-      <p>
-        <strong>Phonetic:</strong> {results.phonetic}
-      </p>
+      <p>{results.phonetic}</p>
 
       {results.meanings.map((meaning, index) => (
-        <div key={index} className="meaning">
-          <p>
-            <strong>Part of speech:</strong> {meaning.partOfSpeech}
-          </p>
-          <p>
-            <strong>Definition:</strong> {meaning.definition}
-          </p>
-          {meaning.example && (
-            <p>
-              <em>Example: {meaning.example}</em>
-            </p>
-          )}
-          {meaning.synonyms && meaning.synonyms.length > 0 && (
-            <p>
-              <strong>Synonyms:</strong> {meaning.synonyms.join(", ")}
-            </p>
-          )}
+        <div key={index}>
+          <Meaning meaning={meaning} />
         </div>
       ))}
     </div>
