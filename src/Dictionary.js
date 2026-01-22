@@ -1,24 +1,25 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Results from "./Results";
 import "./Dictionary.css";
 
 export default function Dictionary() {
   let [keyword, setKeyword] = useState("");
-  const [wordData, setWordData] = useState(null);
+  let [results, setresults] = useState(null);
 
   function handleresponse(response) {
-    console.log(response.data); // Let's see the full response
+    console.log(response.data); 
+    setresults(response.data);
 
-    const data = response.data;
-    const firstMeaning = data.meanings[0];
+    
 
     setWordData({
       word: data.word,
       phonetic: data.phonetic,
       partOfSpeech: firstMeaning.partOfSpeech,
-      definition: firstMeaning.definition, // Direct property, not array
-      example: firstMeaning.example || null, // Direct property
-      synonyms: firstMeaning.synonyms || [], // Direct property
+      definition: firstMeaning.definition, 
+      example: firstMeaning.example || null, 
+      synonyms: firstMeaning.synonyms || [], 
     });
   }
 
@@ -45,6 +46,7 @@ export default function Dictionary() {
           placeholder="What word do you want to look up?"
         />
       </form>
+      <Results results={results} />
       {wordData && (
         <div className="results">
           <h2>{wordData.word}</h2>
