@@ -7,7 +7,7 @@ export default function Dictionary() {
   const [wordData, setWordData] = useState(null);
 
   function handleresponse(response) {
-    console.log(response.data[0]);
+    const data = response.data[0];
     const firstMeaning = data.meanings[0];
     const firstDefinition = firstMeaning.definitions[0];
 
