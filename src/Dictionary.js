@@ -7,17 +7,18 @@ export default function Dictionary() {
   const [wordData, setWordData] = useState(null);
 
   function handleresponse(response) {
+    console.log(response.data); // Let's see the full response
+
     const data = response.data;
     const firstMeaning = data.meanings[0];
-   const firstDefinition = firstMeaning.definitions[0];
 
     setWordData({
       word: data.word,
       phonetic: data.phonetic,
       partOfSpeech: firstMeaning.partOfSpeech,
-      definition: firstDefinition.definition,
-      example: firstDefinition.example || null,
-      synonyms: firstDefinition.synonyms || [],
+      definition: firstMeaning.definition, // Direct property, not array
+      example: firstMeaning.example || null, // Direct property
+      synonyms: firstMeaning.synonyms || [], // Direct property
     });
   }
 
@@ -41,6 +42,7 @@ export default function Dictionary() {
           onChange={handleKeywordChange}
           value={keyword}
           autoFocus={true}
+          placeholder="What word do you want to look up?"
         />
       </form>
       {wordData && (
