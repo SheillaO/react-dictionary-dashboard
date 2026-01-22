@@ -9,7 +9,7 @@ export default function Dictionary() {
   function handleresponse(response) {
     const data = response.data;
     const firstMeaning = data.meanings[0];
-    const firstDefinition = firstMeaning.definitions[0];
+   const firstDefinition = firstMeaning.definitions[0];
 
     setWordData({
       word: data.word,
