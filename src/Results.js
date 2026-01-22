@@ -1,14 +1,16 @@
 import React from "react";
 
 export default function Results(props) {
-  const results = props.results;
-
-  if (props.results) {
-    return null; 
+  // If there are NO results yet, don't show anything
+  if (!props.results) {
+    return null;
   }
 
+  // Now we know results exist, so we can use them
+  const results = props.results;
+
   return (
-    <div>
+    <div className="results">
       <h2>{results.word}</h2>
       <p>
         <strong>Phonetic:</strong> {results.phonetic}
