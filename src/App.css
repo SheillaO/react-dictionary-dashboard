@@ -23,14 +23,16 @@ a:hover {
   height: 60px;
   width: auto;
   opacity: 0.9;
+  display: block;
+  
 }
-
 header {
-  background: white;
+  background: transparent;
   padding: 20px 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
 }
-
 .App-footer {
   text-align: center;
   margin: 40px 20px;
