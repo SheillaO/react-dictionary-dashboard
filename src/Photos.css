@@ -1,4 +1,18 @@
-.Photos img{
-    border-radius: 4px;
-    margin-bottom: 20px;
+.Photos {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.Photos img {
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.Photos img:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }

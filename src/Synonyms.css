@@ -1,11 +1,24 @@
-.Synonyms{
-    margin: 15px 0 0;
-    padding: 0;
+.Synonyms {
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
 }
 
-.Synonyms li{
-    font-size: 13px;
-    display: inline-block;
-    padding-right: 15px;
-    line-height: 1;
+.Synonyms li {
+  font-size: 13px;
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 5px 8px 5px 0;
+  background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+  border-radius: 20px;
+  color: #2d3436;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.Synonyms li:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(253, 203, 110, 0.4);
+  background: linear-gradient(135deg, #fdcb6e 0%, #ffeaa7 100%);
 }
