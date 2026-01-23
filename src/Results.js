@@ -13,22 +13,20 @@ export default function Results(props) {
 
   return (
     <div className="results">
-      <section>
-        <div className="word-header">
-          <div>
-            <h2>{results.word}</h2>
-            <span className="meanings-badge">
-              {results.meanings.length}{" "}
-              {results.meanings.length === 1 ? "meaning" : "meanings"}
-            </span>
-          </div>
+      <section className="word-section">
+        <h2>{results.word}</h2>
+        <Phonetic phonetic={results.phonetic} />
+        <div className="word-meta">
+          <span className="meanings-count">
+            {results.meanings.length}{" "}
+            {results.meanings.length === 1 ? "meaning" : "meanings"}
+          </span>
           <SaveWord word={results.word} />
         </div>
-
-        <Phonetic phonetic={results.phonetic} />
       </section>
+
       {results.meanings.map((meaning, index) => (
-        <section key={index}>
+        <section key={index} className="meaning-section">
           <Meaning meaning={meaning} />
         </section>
       ))}
