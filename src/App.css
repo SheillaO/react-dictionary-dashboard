@@ -1,33 +1,19 @@
-body{
-  background: #f9f8fe;
+body {
+  background: #f9f8fe; 
 }
 
-a{
+a {
   color: #9670f4;
 }
 
-.App-header{
+.App-header {
   margin: 30px 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.App{
+  max-width: 960px;
+  margin: 0 auto;
+}
 
 .brand-logo {
   display: block;
@@ -45,7 +31,7 @@ header {
   backdrop-filter: blur(10px);
 }
 
-.App-footer{
+.App-footer {
   text-align: center;
   margin: 30px 0;
 }
