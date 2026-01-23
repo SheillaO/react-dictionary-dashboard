@@ -1,6 +1,7 @@
 import React from "react";
 import Phonetic from "./Phonetic";
 import Meaning from "./Meaning";
+import "./Results.css";
 
 export default function Results(props) {
   // If there are NO results yet, don't show anything
@@ -13,14 +14,15 @@ export default function Results(props) {
 
   return (
     <div className="results">
-      <h2>{results.word}</h2>
+      <section>
+        <h2>{results.word}</h2>
 
-      <Phonetic phonetic={results.phonetic} />
-
+        <Phonetic phonetic={results.phonetic} />
+      </section>
       {results.meanings.map((meaning, index) => (
-        <div key={index}>
+        <section key={index}>
           <Meaning meaning={meaning} />
-        </div>
+        </section>
       ))}
     </div>
   );

@@ -17,7 +17,7 @@ function App() {
         </div>
       </header>
       <main>
-        <Dictionary />
+        <Dictionary defaultKeyword="Greek" />
       </main>
       <footer className="App-footer">
         <small>
